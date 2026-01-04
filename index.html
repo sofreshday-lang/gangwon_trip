@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>강원도 겨울 여행 - 산천어 축제 & 미식</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+</head>
+<body>
+    <!-- Layer 0: Water Background (CSS) -->
+    
+    <!-- Layer 1: Fish Animation -->
+    <div id="fish-layer">
+        <canvas id="fish-canvas"></canvas>
+    </div>
+
+    <!-- Layer 2: Ice Overlay -->
+    <div class="ice-layer"></div>
+
+    <!-- Layer 3: People Animation -->
+    <div id="people-layer">
+        <!-- People will be added here via JS/CSS -->
+        <div class="person person-1"></div>
+        <div class="person person-2"></div>
+        <div class="person person-3"></div>
+    </div>
+
+    <!-- Layer 4: Content Overlay -->
+    <div class="content-wrapper">
+        <header class="main-header glass-card">
+            <h1>☃️ 1박 2일 강원도 겨울 여행</h1>
+            <p class="date-badge">1월 17일(토) ~ 18일(일)</p>
+            <p class="desc">화천 산천어 축제 & 춘천 해산물 미식 기행</p>
+        </header>
+
+        <main>
+            <!-- Preparation Checklist -->
+            <section class="section glass-card">
+                <h2>🎒 여행 전 체크리스트</h2>
+                <p class="sub-text">떠나기 전 잊지 말고 챙기세요!</p>
+                <div class="checklist-grid">
+                    <label class="check-item">
+                        <input type="checkbox" id="chk_prep_ticket" class="save-state">
+                        <span class="checkmark"></span>
+                        <span class="text">왕복 버스표 예매 (티머니GO)</span>
+                    </label>
+                    <label class="check-item">
+                        <input type="checkbox" id="chk_prep_korail" class="save-state">
+                        <span class="checkmark"></span>
+                        <span class="text">ITX-청춘 예매 (춘천→서울)</span>
+                    </label>
+                    <label class="check-item">
+                        <input type="checkbox" id="chk_prep_warm" class="save-state">
+                        <span class="checkmark"></span>
+                        <span class="text">방한용품 (핫팩, 장갑, 귀마개)</span>
+                    </label>
+                    <label class="check-item">
+                        <input type="checkbox" id="chk_prep_boots" class="save-state">
+                        <span class="checkmark"></span>
+                        <span class="text">방한부츠/등산화 (미끄럼 방지)</span>
+                    </label>
+                    <label class="check-item">
+                        <input type="checkbox" id="chk_prep_chair" class="save-state">
+                        <span class="checkmark"></span>
+                        <span class="text">접이식 의자 (다이소 추천)</span>
+                    </label>
+                    <label class="check-item">
+                        <input type="checkbox" id="chk_prep_id" class="save-state">
+                        <span class="checkmark"></span>
+                        <span class="text">신분증 & 지갑</span>
+                    </label>
+                </div>
+            </section>
+
+            <!-- Day 1 -->
+            <section class="section glass-card">
+                <div class="day-header">
+                    <span class="day-tag">1일차</span>
+                    <h2>얼음판 위의 승부 (화천)</h2>
+                </div>
+                
+                <div class="timeline-checklist">
+                    <div class="time-block">
+                        <div class="time">07:00</div>
+                        <label class="check-item">
+                            <input type="checkbox" id="chk_d1_start" class="save-state">
+                            <span class="checkmark"></span>
+                            <div class="content">
+                                <strong>서울 출발</strong>
+                                <p>동서울터미널 → 화천 (약 2시간 40분)</p>
+                            </div>
+                        </label>
+                    </div>
+
+                    <div class="time-block">
+                        <div class="time">09:30</div>
+                        <label class="check-item">
+                            <input type="checkbox" id="chk_d1_fish" class="save-state">
+                            <span class="checkmark"></span>
+                            <div class="content">
+                                <strong>🎣 산천어 얼음낚시 시장</strong>
+                                <p>오전 방류 타임을 노리세요! (목표: 3마리)</p>
+                            </div>
+                        </label>
+                    </div>
+
+                    <div class="time-block">
+                        <div class="time">13:00</div>
+                        <label class="check-item">
+                            <input type="checkbox" id="chk_d1_lunch" class="save-state">
+                            <span class="checkmark"></span>
+                            <div class="content">
+                                <strong>점심: 내가 잡은 산천어</strong>
+                                <p>구이센터/회센터에서 바로 시식 😋</p>
+                            </div>
+                        </label>
+                    </div>
+
+                    <div class="time-block">
+                        <div class="time">14:30</div>
+                        <label class="check-item">
+                            <input type="checkbox" id="chk_d1_play" class="save-state">
+                            <span class="checkmark"></span>
+                            <div class="content">
+                                <strong>얼음 썰매 & 맨손 잡기 구경</strong>
+                                <p>소화시킬 겸 신나게 놀기</p>
+                            </div>
+                        </label>
+                    </div>
+
+                    <div class="time-block">
+                        <div class="time">17:00</div>
+                        <label class="check-item">
+                            <input type="checkbox" id="chk_d1_move" class="save-state">
+                            <span class="checkmark"></span>
+                            <div class="content">
+                                <strong>춘천으로 이동</strong>
+                                <p>화천터미널 → 춘천 (약 1시간)</p>
+                            </div>
+                        </label>
+                    </div>
+
+                    <div class="time-block">
+                        <div class="time">18:30</div>
+                        <label class="check-item">
+                            <input type="checkbox" id="chk_d1_dinner" class="save-state">
+                            <span class="checkmark"></span>
+                            <div class="content">
+                                <strong>저녁: 대방어/숙성회 🍣</strong>
+                                <p>퇴계동 먹자골목 (남춘천역 인근)</p>
+                            </div>
+                        </label>
+                    </div>
+
+                    <div class="time-block">
+                        <div class="time">20:00</div>
+                        <label class="check-item">
+                            <input type="checkbox" id="chk_d1_night" class="save-state">
+                            <span class="checkmark"></span>
+                            <div class="content">
+                                <strong>춘천 밤 산책 🌙</strong>
+                                <p>공지천 유원지 또는 구봉산 카페거리</p>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Day 2 -->
+            <section class="section glass-card">
+                <div class="day-header">
+                    <span class="day-tag">2일차</span>
+                    <h2>춘천의 겨울 낭만</h2>
+                </div>
+
+                <div class="timeline-checklist">
+                    <div class="time-block">
+                        <div class="time">10:30</div>
+                        <label class="check-item">
+                            <input type="checkbox" id="chk_d2_sky" class="save-state">
+                            <span class="checkmark"></span>
+                            <div class="content">
+                                <strong>소양강 스카이워크</strong>
+                                <p>투명 유리길 걷기</p>
+                            </div>
+                        </label>
+                    </div>
+
+                    <div class="time-block">
+                        <div class="time">12:00</div>
+                        <label class="check-item">
+                            <input type="checkbox" id="chk_d2_lunch" class="save-state">
+                            <span class="checkmark"></span>
+                            <div class="content">
+                                <strong>점심: 얼큰 해물 요리 🥘</strong>
+                                <p>해물찜 or 민물매운탕</p>
+                            </div>
+                        </label>
+                    </div>
+
+                    <div class="time-block">
+                        <div class="time">13:30</div>
+                        <label class="check-item">
+                            <input type="checkbox" id="chk_d2_cafe" class="save-state">
+                            <span class="checkmark"></span>
+                            <div class="content">
+                                <strong>소양강 뷰 카페 & 복귀</strong>
+                                <p>ITX-청춘 타고 서울로!</p>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="main-footer">
+            <p>즐거운 여행 되세요! 🏔️</p>
+        </footer>
+    </div>
+
+    <!-- Reset Button (Hidden feature for testing) -->
+    <button id="reset-btn" style="position:fixed; bottom:10px; right:10px; opacity:0.5; font-size:10px;">Reset Checklists</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
