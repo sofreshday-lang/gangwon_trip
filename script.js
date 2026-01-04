@@ -112,11 +112,43 @@ function initFishAnimation() {
 
     fishImage.onload = function () {
         resizeCanvas();
+
+        // Process image to remove white background
+        const processedFish = removeWhiteBackground(fishImage);
+
         for (let i = 0; i < numberOfFish; i++) {
-            fishArray.push(new Fish());
+            const f = new Fish();
+            f.image = processedFish;
+            fishArray.push(f);
         }
         animate();
     };
+
+    // Helper: Remove white background pixels
+    function removeWhiteBackground(img) {
+        const tempCanvas = document.createElement('canvas');
+        tempCanvas.width = img.width;
+        tempCanvas.height = img.height;
+        const tempCtx = tempCanvas.getContext('2d');
+
+        tempCtx.drawImage(img, 0, 0);
+        const imageData = tempCtx.getImageData(0, 0, img.width, img.height);
+        const data = imageData.data;
+
+        for (let i = 0; i < data.length; i += 4) {
+            const r = data[i];
+            const g = data[i + 1];
+            const b = data[i + 2];
+
+            // If pixel is near white
+            if (r > 230 && g > 230 && b > 230) {
+                data[i + 3] = 0; // Set alpha to 0
+            }
+        }
+
+        tempCtx.putImageData(imageData, 0, 0);
+        return tempCanvas;
+    }
 
     window.addEventListener('resize', resizeCanvas);
 
